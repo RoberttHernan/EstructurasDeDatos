@@ -100,3 +100,27 @@ void imprimirListaCompleta(Nodo *nodo)
     }
     cout << nodo->data << endl;
 }
+void BorrarNodo(Nodo ** head_ref , int key){
+Nodo * tmp = *head_ref, *prev ; // APUNTAMOS CON UN NODO AUXLILIAR A LOS NODOS HEAD Y PREVIO
+
+//SI EL PRIMER NODO CONTIENE EL DATO A BORRAR
+if (tmp !=NULL && tmp->data == key){
+    *head_ref = tmp -> next;
+    free (tmp);//LIBERAMOS LA MEMORIA DEL BORRADO
+}
+//BUSCAMOS EL NODO CON EL DATO A BORRAR, RECORRIENDO LA LISTA
+while (tmp != NULL && tmp->data !=key){
+    prev = tmp;
+    tmp = tmp->next;
+}
+//SI EL DATO DADO NO EXISTE EN LA LISTA
+if(tmp == NULL && tmp->data !=key);
+  
+
+
+    prev->next = tmp->next;
+    free (tmp);
+
+
+}
+
